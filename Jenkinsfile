@@ -8,7 +8,7 @@ pipeline {
 
     }
     options {
-        timeout(time: 1, unit: 'SECONDS')
+        timeout(time: 10, unit: 'SECONDS')
     }
    // build
     stages {
@@ -18,6 +18,7 @@ pipeline {
                    // echo 'Building..'
                    sh """
                    echo "hello world"
+                   sleep 10
                    env
                    """
                 }
