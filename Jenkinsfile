@@ -7,8 +7,9 @@ pipeline {
         COURSE = 'jenkins'
 
     }
-    options {
-        timeout(time: 10, unit: 'SECONDS')
+    options { // pipeline expries 30 mint
+        timeout(time: 30, unit: 'MINUTES')
+        disableConcurrentBuilds() // not parallel to pipelines at a time so, one complted after another complted
     }
    // build
     stages {
