@@ -7,24 +7,33 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                echo 'Building..'
+                script{
+                    echo 'Building..'
+                }
+                
             }
         }
         stage('Test') {
             steps {
-                echo 'Testing..'
+                script{
+                    echo 'Testing..'
+                }
+                
             }
         }
         stage('Deploy') {
             steps {
-                echo 'Deploying....'
+                script{
+                    echo 'Deploying....'
+                }
+                
             }
         }
     }
     post { 
         always { 
             echo 'I will always say Hello again!'
-            deleteDir() // delete post build pipeline in workspace 
+            deleteDir() // delete post build pipeline in workspace  
         }
         success { 
             echo 'hello success'
